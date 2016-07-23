@@ -58,6 +58,7 @@ RUN set -ex \
 	&& ./configure \
 		--enable-shared \
 		--enable-unicode=ucs4 \
+		CFLAGS='-g -fno-omit-frame-pointer' \
 	&& make -j$(getconf _NPROCESSORS_ONLN) \
 	&& make install \
 	\

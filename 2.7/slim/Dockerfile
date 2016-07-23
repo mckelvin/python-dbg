@@ -53,6 +53,7 @@ RUN set -ex \
 	&& ./configure \
 		--enable-shared \
 		--enable-unicode=ucs4 \
+		CFLAGS='-g -fno-omit-frame-pointer' \
 	&& make -j$(nproc) \
 	&& make install \
 	&& ldconfig \
